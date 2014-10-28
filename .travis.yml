@@ -9,7 +9,6 @@ python:
 install: "pip install coveralls"
 # command to run tests
 script:
-  python test.py
   coverage run --source=visualcaptcha test.py
 after_success:
   coveralls

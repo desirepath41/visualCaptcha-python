@@ -73,3 +73,7 @@ By default, they're populated using the `./assets/audios.json` file.
   - `headers` is a list with the HTTP headers to be set;
   - `index` is index of the image in the session images list to receive;
   - `isRetina`, boolean, deciding if the normal or retina image should be streamed, defaults to `False`.
+
+## Pushing to PyPi
+
+`$ python setup.py sdist upload`
