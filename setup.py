@@ -1,8 +1,7 @@
 from distutils.core import setup
 from pypandoc import convert
 
-with convert('README.md') as file:
-    long_description = file
+long_description = convert('README.md', 'rst')
 
 setup(
     name = 'visualcaptcha',

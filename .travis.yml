@@ -6,7 +6,9 @@ python:
   - "3.3"
   - "3.4"
 # command to install dependencies
-install: "pip install coveralls"
+install:
+  - "pip install unittest"
+  - "pip install coveralls"
 # command to run tests
 script:
   coverage run --source=visualcaptcha test.py
