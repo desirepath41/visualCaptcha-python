@@ -1,5 +1,8 @@
 # visualCaptcha-python
 
+[![Build Status](http://img.shields.io/travis/emotionLoop/visualCaptcha-python.svg)](http://travis-ci.org/emotionLoop/visualCaptcha-python)
+[![Coverage Status](https://coveralls.io/repos/emotionLoop/visualCaptcha-python/badge.png)](https://coveralls.io/r/emotionLoop/visualCaptcha-python)
+
 Python package for visualCaptcha's backend service
 
 
