@@ -102,7 +102,7 @@ class Captcha( object ):
     def streamAudio( self, headers, fileType = 'mp3' ):
         audioOption = self.getValidAudioOption()
         # If there's no audioOption, we set the file name as empty
-        audioFileName = audioOption['path'] if ( audioOption ) else ''
+        audioFileName = audioOption['path'] if audioOption else ''
 
         audioFilePath = self.assetsPath + '/audios/' + audioFileName
 
@@ -130,6 +130,13 @@ class Captcha( object ):
         imageFilePath = self.assetsPath + '/images/' + imageFileName
 
         # Force boolean for isRetina
+        if ( isRetina == None ):
+            isRetina = 0
+        elif ( isRetina == True ):
+            isRetina = 1
+        elif ( isRetina == False ):
+            isRetina = 0
+
         isRetina = int( isRetina ) >= 1
 
         # If retina is requested, change the file name
@@ -173,9 +180,10 @@ class Captcha( object ):
 
     # Return generated image option at index
     def getImageOptionAtIndex( self, index ):
+        index = int( index )
         imageOptions = self.getImageOptions()
 
-        return imageOptions[ index ] if ( (len(imageOptions) > index - 1) and imageOptions[index] ) else None
+        return imageOptions[ index ] if ( (len(imageOptions) > (index - 1)) and imageOptions[index] ) else None
 
     # Alias for getValidAudioOption
     def getAudioOption( self ):
@@ -219,9 +227,7 @@ class Captcha( object ):
         headers[ 'Pragma' ] = 'no-cache'
         headers[ 'Expires' ] = 0
 
-        open( filePath, 'r' ).read()
-
-        return True
+        return open( filePath, 'r' ).read()
 
     # Get File's mime type
     def getMimeType( self, filePath ):
