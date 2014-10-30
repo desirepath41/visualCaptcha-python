@@ -1,1 +1,3 @@
-graft visualcaptcha/assets
+include LICENSE
+include README.md
+recursive-include visualcaptcha/assets *

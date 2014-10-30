@@ -11,4 +11,12 @@ setup(
     download_url = 'https://github.com/emotionLoop/visualCaptcha-python/tarball/0.0.3',
     keywords = ['captcha', 'visualcaptcha', 'security'],
     classifiers = [],
+    package_data = {
+        'visualcaptcha': [
+            'assets/*.json',
+            'assets/images/*.png',
+            'assets/audios/*.mp3',
+            'assets/audios/*.ogg'
+        ]
+    },
 )
