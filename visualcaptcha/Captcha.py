@@ -110,7 +110,7 @@ class Captcha( object ):
         if ( audioFileName != '' ):
             # We need to replace '.mp3' with '.ogg' if the fileType == 'ogg'
             if ( fileType == 'ogg' ):
-                audioFilePath = re.sub( r'/\.mp3/i', '.ogg', audioFilePath )
+                audioFilePath = re.sub( r'(?i)\.mp3', '.ogg', audioFilePath )
             else:
                 # This isn't doing anything, really, but I feel better with it
                 fileType = 'mp3'
@@ -141,8 +141,8 @@ class Captcha( object ):
 
         # If retina is requested, change the file name
         if ( isRetina ):
-            imageFileName = re.sub( r'/\.png/i', '@2x.png', imageFileName )
-            imageFilePath = re.sub( r'/\.png/i', '@2x.png', imageFilePath )
+            imageFileName = re.sub( r'(?i)\.png', '@2x.png', imageFileName )
+            imageFilePath = re.sub( r'/(?i)\.png', '@2x.png', imageFilePath )
 
         # If the index is non-existent, the file name will be empty, same as if the options weren't generated
         if ( imageFileName != '' ):
@@ -231,4 +231,4 @@ class Captcha( object ):
 
     # Get File's mime type
     def getMimeType( self, filePath ):
-        mimetypes.guess_type( filePath )[ 0 ]
+        return mimetypes.guess_type( filePath )[ 0 ]
