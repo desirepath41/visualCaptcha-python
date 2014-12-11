@@ -1,20 +1,20 @@
-class Session( object ):
+class Session(object):
 
-    def __init__( self, session = {}, namespace = 'visualcaptcha' ):
+    def __init__(self, session={}, namespace='visualcaptcha'):
         self.session = session
         self.namespace = namespace
 
-    def clear( self ):
-        self.session[ self.namespace ] = {}
+    def clear(self):
+        self.session[self.namespace] = {}
 
-    def get( self, key ):
-        if ( self.session.get(self.namespace, None) == None ):
+    def get(self, key):
+        if not self.session.get(self.namespace, None):
             self.clear()
 
-        return self.session.get( self.namespace, {} ).get( key, None )
+        return self.session.get(self.namespace, {}).get(key, None)
 
-    def set( self, key, value ):
-        if ( self.session.get(self.namespace, None) == None ):
+    def set(self, key, value):
+        if not self.session.get(self.namespace, None):
             self.clear()
 
-        self.session[ self.namespace ][ key ] = value
+        self.session[self.namespace][key] = value
