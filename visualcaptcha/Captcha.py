@@ -50,9 +50,9 @@ class Captcha(object):
         # Avoid the next IF failing if a string with a number is sent
         numberOfOptions = int(numberOfOptions)
 
-        # Set the minimum numberOfOptions to two
-        if (numberOfOptions < 2):
-            numberOfOptions = 2
+        # Set the minimum numberOfOptions to four
+        if (numberOfOptions < 4):
+            numberOfOptions = 4
 
         # Shuffle all imageOptions
         random.shuffle(self.imageOptions)
@@ -229,6 +229,9 @@ class Captcha(object):
         f = open(filePath)
         content = f.read()
         f.close()
+
+        # Add some noise randomly, so images can't be saved and matched easily by filesize or checksum
+        content += self.utilRandomHex( random.randint(0, 1500) )
 
         return content
 
