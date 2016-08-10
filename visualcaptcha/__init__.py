@@ -1,3 +1,3 @@
 #!/usr/bin/env python
-from Session import *
-from Captcha import *
+from .Session import *
+from .Captcha import *

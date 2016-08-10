@@ -3,6 +3,7 @@ import re
 import json
 import random
 import mimetypes
+import binascii
 
 
 class Captcha(object):
@@ -198,7 +199,11 @@ class Captcha(object):
 
     # Create a hex string from random bytes
     def utilRandomHex(self, count):
-        return os.urandom(count).encode('hex')
+        return str(binascii.hexlify(os.urandom(count)))
+
+    # Create a hex string from random bytes
+    def utilRandomHexBytes(self, count):
+        return binascii.hexlify(os.urandom(count))
 
     # Read input file as JSON
     def utilReadJSON(self, filePath):
@@ -226,12 +231,12 @@ class Captcha(object):
         headers['Pragma'] = 'no-cache'
         headers['Expires'] = 0
 
-        f = open(filePath)
+        f = open(filePath, 'rb')
         content = f.read()
         f.close()
 
         # Add some noise randomly, so images can't be saved and matched easily by filesize or checksum
-        content += self.utilRandomHex( random.randint(0, 1500) )
+        content += self.utilRandomHexBytes( random.randint(0, 1500) )
 
         return content
 
