@@ -408,8 +408,8 @@ class GetImageOptionsTest(unittest.TestCase):
         self.assertEqual(optionsLength, numberOfOptions)
 
         # Loop through all options, and count each time a duplicate value exists in the array
-        for i in xrange(0, optionsLength, 1):
-            for j in xrange(0, optionsLength, 1):
+        for i in range(0, optionsLength, 1):
+            for j in range(0, optionsLength, 1):
                 if (i != j and options[i]['value'] == options[j]['value']):
                     foundSimilarOptions += 1
 
@@ -435,7 +435,7 @@ class GetImageOptionsTest(unittest.TestCase):
         thirdOptions = visualCaptcha.getImageOptions()
 
         # Loop through all options, and test each time that the same object exists in both the other arrays
-        for i in xrange(0, numberOfOptions, 1):
+        for i in range(0, numberOfOptions, 1):
             # Check if all the values match
             self.assertEqual(firstOptions[i]['value'], secondOptions[i]['value'])
             self.assertEqual(firstOptions[i]['value'], thirdOptions[i]['value'])
@@ -573,5 +573,5 @@ class StreamAudioTest(unittest.TestCase):
         self.assertFalse(fileReturn)
 
 if __name__ == '__main__':
-    print "Running unit tests"
+    print("Running unit tests")
     unittest.main()

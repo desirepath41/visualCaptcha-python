@@ -1,11 +1,10 @@
-[![Build Status](http://img.shields.io/travis/emotionLoop/visualCaptcha-python.svg?flat=true)](http://travis-ci.org/emotionLoop/visualCaptcha-python)
-[![Coverage Status](https://coveralls.io/repos/emotionLoop/visualCaptcha-python/badge.svg?flat=true)](https://coveralls.io/r/emotionLoop/visualCaptcha-python)
-[![Codacy](https://www.codacy.com/project/badge/528e5e89596e4bfb8a17292da017db4c)](https://www.codacy.com/app/bruno-bernardino/visualCaptcha-python)
-[![Code Climate](https://codeclimate.com/github/emotionLoop/visualCaptcha-python/badges/gpa.svg)](https://codeclimate.com/github/emotionLoop/visualCaptcha-python)
+[![Build Status](http://img.shields.io/travis/desirepath41/visualCaptcha-python.svg?flat=true)](http://travis-ci.org/desirepath41/visualCaptcha-python)
+[![Coverage Status](https://coveralls.io/repos/desirepath41/visualCaptcha-python/badge.svg?flat=true)](https://coveralls.io/r/desirepath41/visualCaptcha-python)
+[![Code Climate](https://codeclimate.com/github/desirepath41/visualCaptcha-python/badges/gpa.svg)](https://codeclimate.com/github/desirepath41/visualCaptcha-python)
 
 # visualCaptcha-python
 
-Python package for visualCaptcha's backend service
+Python package for visualCaptcha's backend service (compatible with Python 2 and 3)
 
 
 ## Installation with PIP
